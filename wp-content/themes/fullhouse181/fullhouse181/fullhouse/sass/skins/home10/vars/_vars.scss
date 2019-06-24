@@ -1,0 +1,51 @@
+$theme-font-path           : "../../../fonts/";
+$fa-font-path              : "../../../fonts/";
+$image-theme-path          : "../../../images/";
+$image-theme-skin			: "../../../images/";
+
+$brand-primary   					: #41b1d3;
+$link-hover-color					: #41b1d3;
+$headings-font-family				: 'Muli', sans-serif;
+$font-family-base					: 'Muli', sans-serif;
+$navbar-link-font-family			: 'Muli', sans-serif;
+$font-size-base						: 14px;
+$nav-tabs-active-link-hover-color	: #41b1d3; 
+$theme-color						: #41b1d3;
+
+/*boostrap var*/
+$component-active-bg:       		$brand-primary;
+$btn-primary-bg:                 	$brand-primary;
+$btn-primary-border:             	darken($btn-primary-bg, 5%);
+$input-border-focus:             	$brand-primary;
+$pagination-active-bg:              $brand-primary;
+$pagination-active-border:          $brand-primary;
+$label-primary-bg:            		$brand-primary;
+$label-link-hover-color:      		$brand-primary;
+$modal-content-border-color:        $brand-primary;
+$progress-bar-bg:             		$brand-primary;
+$panel-primary-border:        		$brand-primary;
+$panel-primary-heading-bg:    		$brand-primary;
+$breadcrumb-active-color:       	$brand-primary;
+$headings-font-weight:				300;
+$headings-line-height:				1.4;
+
+/*theme var*/
+$bo-counter-color:                   $brand-primary;
+$bo-list-a-color-hover:                   $brand-primary;
+$bo-list-primary:                         $brand-primary;  
+$bo-blockquote-icon-background  		: $brand-primary;
+
+$element-color-primary        			: $theme-color;
+$btn-outline-bg                         : $theme-color; 
+$btn-outline-inverse-hover-bg           : $theme-color;
+$topbar-link-hover-color                : $theme-color;
+$massbottom-head-bg		 				: $theme-color;
+$massbottom-head-color   				: $theme-color;
+$footer-link-hover-color                : $theme-color;
+$footer-newsletter-bg                   : $theme-color;
+$copyright-link-color                   : $theme-color;
+$navbar-dropdown-link-hover-color       : $theme-color;
+$block-module-highlighted-bg                    : $theme-color;
+$block-module-highlighted-border                : solid 2px $theme-color;
+$block-sidebar-link-hightlight-hover-color      : $theme-color;
+$block-module-heading-transform					: none;

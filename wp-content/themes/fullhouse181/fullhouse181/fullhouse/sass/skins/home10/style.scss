@@ -1,0 +1,319 @@
+/*
+Theme Name: fullhouse
+Theme URI: http://www.wpopal.com/product/fullhouse/
+Author: Opal Team
+Author URI: https://www.wpopal.com/
+Description: In 2016, our default theme lets you create a responsive magazine website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a magazine website with WordPress has never been easier.
+Version: 1.6
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+Text Domain: fullhouse
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/*------------------------------------------------------------------
+[Table of contents]
+1. Utilities
+2. Base
+3. Layout
+4. Page
+5. Post
+6. Form
+7. Responsive
+8. Widget
+
+-------------------------------------------------------------------*/
+@import "../../bootstrap";
+
+@import "../../components/variables";
+@import "vars/vars";
+
+/* Core CSS*/
+@import "../../bootstrap/scaffolding";
+@import "../../bootstrap/type";
+@import "../../bootstrap/forms";
+@import "../../bootstrap/buttons"; 
+
+/* 1. Utilities */
+@import "../../components/mixins";
+
+/* 2. Base */
+@import "../../components/base";
+@import "../../components/typo";
+
+/* 3. Layout */
+@import "../../components/template-layout";
+@import "../../components/widget-layout";
+
+/* 8. Widget */
+@import "../../components/widgets";
+@import "../../components/nav";
+
+/* 4. Page */
+@import "../../components/page";
+
+/* 5. Post */
+@import "../../components/post-formats";
+@import "../../components/post-single";
+@import "../../components/custom-posttype";
+
+/* 6. Form */
+@import "../../components/elements";
+@import "../../components/vc";
+
+/* 7. Responsive */
+@import "../../components/responsive";
+
+.#{$block-selector} {
+	.#{$block-heading-selector} {
+		font-weight: 800;
+	}
+}
+.btn {
+	font-weight: 700;
+}
+.navbar-mega {
+	.navbar-nav {
+		> li {
+			> a {
+				font-weight: 700;
+				font-size:16px;
+				.caret {
+					font-weight: 400;
+				}
+			}
+			.dropdown-menu li a {
+				font-weight: 600;
+			}
+		}
+	}
+}
+#pbr-masthead.header-v10 .widget.widget_text ul li {
+	font-size: 14px;
+	strong {
+		font-size: 18px;
+		font-weight: 700;
+	}
+}
+#pbr-footer {
+	background-color: #2a2a2a;
+	color: $light-gray;
+	.widget_text {
+		p {
+			overflow: hidden;
+			i {
+				@include rtl-float-left();
+				@include rtl-margin(5px,20px,0,0);
+				border-radius: 3px;
+				@include square(36px);
+				color: #fff;
+				line-height: 36px;
+				text-align: center;
+				background-color: rgba($white,.1);
+			}
+		}
+	}
+	.widget_pbr_socials_widget ul > li a i {
+		background-color: rgba($white,.1);
+	}
+	&:before {
+		content: none;
+	}
+}
+.pbr-copyright {
+	background-color: #272727;
+}
+.widget-text-heading {
+	margin-bottom: 30px;
+	@include rtl-text-align-left();
+	padding-bottom: 0;
+	&:before,
+	&:after {
+		content: none;
+	}
+	.widget-heading {
+		font-size: 48px;
+		text-transform: none;
+		.description,
+		.widget-desc {
+			font-style: normal;
+			margin-top: 5px;
+		}
+	}
+	&.style-3 {
+		text-align: center;
+	}
+	&.style-2 {
+		.widget-heading {
+			font-size: 24px;
+			> span:first-child {
+				padding-bottom: 0;
+				margin-bottom: 3px;
+				&:before, {
+					content: none;
+				}
+			}
+			.description {
+				font-style: normal;
+				color: $text-color;
+				font-weight: 300;
+				font-size: 14px;
+				margin: 0;
+			}
+		}
+	}
+	&.style-4 {
+		background: none;
+		.description {
+			color: #fff;
+			font-style: normal;
+			font-weight: 300;
+			margin-top: 5px;
+		}
+	}
+}
+#content .vc_row{
+	.#{$block-selector} {
+		.#{$block-heading-selector} {
+			text-transform: none;
+			font-size: 48px;
+			background: none;
+			padding-bottom: 0;
+			margin-bottom: 40px;
+				&:after {
+				content: none;
+				}
+				.description, .widget-desc{
+					font-style: normal;
+					margin-top: 20px;
+			}
+		}
+	}
+}
+.feature-box {
+	&.feature-box-v1 {
+		.fbox-icon {
+			margin-bottom: 30px;
+			@include rtl-text-align-left();
+			.icons {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				border: 1px solid $border-color;
+				text-align: center;
+				line-height: 78px;
+			}
+		}
+		.fbox-content {
+			margin: 0;
+			.fbox-body {
+				h4 {
+					font-weight: 600;
+					font-size: 20px;
+					text-transform: none;
+					margin-bottom: 7px;
+				}
+			}
+		}
+	}
+}
+.testimonials .testimonials-left {
+	div .name {
+		font-weight: 800;
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
+	.testimonials-profile {
+		.job {
+			font-weight: 600;
+			color: $light-gray;
+			text-transform: none;
+			font-size: 14px;
+		}
+	}
+	.testimonials-quote {
+		p {
+			color: #666;
+			font-weight: 300;
+			line-height: 38px;
+		}
+	}
+}
+.frontpage-3 {
+	article.post {
+		.entry-title {
+			font-weight: 700;
+		}
+		.entry-date {
+			font-weight: 800;
+			span {
+				@include rtl-margin-right(10px);
+			}
+		}
+		.entry-category,
+		.entry-comment {
+			margin-top: 28px;
+			font-weight: 300;
+		}
+	}
+}
+
+.slideshowpost {
+	article.post {
+		.entry-title {
+			font-weight: 600;
+			line-height: 28px;
+			margin-bottom: 20px;
+		}
+		.more-link {
+			font-size: 14px;
+			text-transform: none;
+			font-weight: 800;
+		}
+	}
+}
+.widget_pbr_recent_post .item-post.media .media-body .entry-title,
+article.post .entry-title {
+	font-weight: 600;
+}
+.navbar-mega .navbar-nav > li > a,
+.navbar-mega .navbar-nav > li > a .caret,
+.searchform .pbr-search .input-group-addon {
+	color: #000;
+}
+.searchform .pbr-search .input-group-addon {
+	font-size: 12px;
+}
+.searchform:hover .pbr-search .input-group-addon {
+	color: #fff;
+}
+.header-transparent {
+	.navbar-mega .navbar-nav > li > a,
+	.navbar-mega .navbar-nav > li > a .caret,
+	.searchform .pbr-search .input-group-addon {
+		color: #fff;
+	}
+	.navbar-mega .navbar-nav li.active > a,
+	.navbar-mega .navbar-nav > li.active > a .caret,
+	.navbar-mega .navbar-nav li > a:hover,
+	.navbar-mega .navbar-nav li > a:hover .caret {
+		color: $theme-color;
+	}
+}
+#pbr-masthead {
+	background-color: #eee;
+}
+.sidebar .widget_categories {
+	background-color: #eee;
+	.widget-title {
+		color: #000;
+	}
+	> ul > li > a {
+		color: #000;
+		&:hover {
+			color: $theme-color;
+		}
+	}
+}

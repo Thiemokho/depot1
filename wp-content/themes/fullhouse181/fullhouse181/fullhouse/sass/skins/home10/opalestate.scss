@@ -1,0 +1,345 @@
+// Core variables and mixins
+@import "../../bootstrap/variables";
+@import "vars/vars";
+@import "../../bootstrap/mixins";
+
+@import "../../components/mixins";
+@import "../../components/variables";
+
+@import "../../opalestate/styles";
+@import "../../opalestate/3rd";
+@import "../../opalestate/management";
+
+.search-properies-form {
+	label {
+		font-size: 12px;
+		font-weight: 700;
+	}
+	ul.list-inline li {
+		font-weight: 700;
+		font-size:18px;
+	}
+	.form-control {
+		height: 35px;
+		line-height: 33px;
+		font-weight:600;
+	}
+	.btn-search {
+		text-transform: none;
+		font-weight: 700;
+		font-size:14px;
+		position: relative;
+		padding: 25px;
+		margin-top: 23px;
+		width: 100%;
+		&:before {
+			font-family: 'FontAwesome';
+			content: "\f002";
+			display: block;
+			margin-bottom: 10px;
+			font-weight:400;
+		}
+	}
+}
+
+.opalestate-search-properties {
+    .container {
+        padding: 0;
+    }
+    .opal-row {
+        .col-lg-3 {
+            display: none;
+        }
+        .col-lg-9 {
+            width: 100%;
+        }
+    }
+    .search-properies-form {
+        background-color:#eee;
+        color: #000;
+        label {
+        	color: $light-gray;
+        	font-weight: 400;
+        }
+        .form-control {
+        	border: 1px solid #d5d5d5;
+        }
+        #opalestate-search-form {
+            .row:first-child {
+                border-bottom: none;
+            }
+        }
+        ul.list-property-status {
+            border-bottom: 1px solid #d6d6d6;
+            margin-bottom:8px;
+            li {
+                padding: 20px 0 10px;
+                margin: 0 35px;
+                &:before {
+                    content: "";
+                    background-color: $theme-color;
+                    width: 0;
+                    height: 3px;
+                    position: absolute;
+                    left: 7px;
+                    bottom: -1px;
+                    @include opacity(0);
+                }
+                &.active {
+                    background-color: transparent;
+                    &:before {
+                        @include opacity(1);
+                        width: 100%;
+                    }
+                }
+                &:first-child {
+                    @include rtl-margin-left(0);
+                }
+                @media (max-width: $screen-phone) {
+                	margin: 0 10px;
+                }
+            }
+        }
+    }
+}
+
+.slider-search-transparent {
+	.opalestate-search-properties {
+		.search-properies-form {
+			color: #fff;
+			ul.list-property-status li:before {
+				border-top-width: 1px;
+			}
+		}
+	}
+}
+
+.widget-estate-property {
+	.opalesate-archive-top {
+		background: none;
+		text-align: center;
+		margin-bottom: 50px;
+		.list-property-status {
+			float: none !important;
+			display:inline-block;
+		}
+		.col-md-7 {
+			width: 100%;
+		}
+		.col-md-5 {
+			display: none;
+		}
+	}
+}
+#property-filter-status {
+	.list-property-status {
+		li {
+			line-height: 34px;
+			font-weight: 800;
+			color: #000;
+			border-radius: 17px;
+			&.active {
+				&:after {
+					content: none;
+				}
+			}
+			&:after {
+				content: none;
+			}
+		}
+	}
+}
+.opalestate-rows {
+	article {
+		border-left: 1px solid #e5e5e5;
+		border-right: 1px solid #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+		> header {
+			margin: 0 -1px;
+		}
+		.property-meta-list {
+			background-color: #fff;
+			color: $light-gray;
+			border-bottom: 1px solid #e5e5e5;
+			font-weight: 600;
+			margin-top: -1px;
+			font-size: 12px;
+		}
+		.property-list {
+			.property-meta-list {
+				border-bottom: none;
+			}
+		}
+		.property-list-style-v2 {
+			margin-bottom: 0;
+		}
+		.entry-title {
+			text-transform: none;
+			font-size: 20px;
+			font-weight: 600;
+		}
+		.entry-summary {
+			font-size: 14px;
+			font-style: normal;
+		}
+		.property-price {
+			.property-price-label {
+				font-weight: 700;
+			}
+		}
+		&:hover {
+			.property-meta-list {
+				color: #fff;
+				i:before {
+					color: #fff;
+				}
+			}
+		}
+	}
+	&.opalesate-featured-property {
+		article {
+			border: none;
+			.property-meta-list {
+				border-bottom: none;
+			}
+		}
+	}
+}
+.property-listing {
+	&.my-favorite {
+		.opalestate-rows {
+			article {
+				border: none;
+				.property-meta-list {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	&.my-properties {
+		.opalestate-rows {
+			article {
+				border: none;
+				.property-meta-list {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+ul.property-meta-list i:before {
+	color: #ccc;
+	font-weight: 300;
+}
+.entry-content-page .slider-property-featured-wrapper .slider-property-featured .widget-estate-property .opalestate-rows article {
+	border: none;
+	.property-meta {
+		.property-meta-list {
+			background-color: #fff;
+			border-top: 1px solid #e5e5e5;
+		}
+	}
+	.property-meta-bottom {
+		padding-top: 0;
+		border-top: none;
+	}
+	&:hover {
+		.property-meta {
+			.property-meta-list {
+				background-color: $theme-color;
+				border-color: $theme-color;
+			}
+		}
+	}
+}
+.opalestate_agent .agent-box-title {
+	font-weight: 600;
+	font-size: 20px;
+	text-transform:none;
+}
+.search-properies-form #opalestate-search-form-v .btn-search:before {
+	content: none;
+}
+.opalestate-quick-search-form .quick-search-places-form.row .btn-search {
+	border-color: $theme-color;
+	padding: 7px 12px;
+}
+.widget-properties .entry-title {
+	font-weight: 600;
+}
+.single-opalestate_office .office-address-map > h3 {
+	font-weight: 800;
+	text-transform: none;
+}
+.single-opalestate-container > article .property-office-section .opalestate-rows article {
+	border: none;
+	.property-meta-list {
+		background-color: $theme-color;
+		border-bottom: none;
+	}
+}
+.opaleslate-ajax-search-results-container {
+	.opalestate-rows .map-active {
+		article {
+			.property-meta-list {
+				color: #fff;
+				i:before {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+.property-same-agent-section {
+	.opalestate-rows article .property-meta-list {
+		border-bottom: none;
+	}
+}
+.search-properies-form ul.list-property-status li.active::before {
+	border-top-width: 3px;
+}
+.opalestate-quick-search-form .quick-search-places-form.row input, 
+.opalestate-quick-search-form .quick-search-places-form.row select {
+	background-color: #fff;
+	color: #000;
+	@include placeholder(#000);
+}
+.btn-modal-locations {
+	color: #000;
+}
+.opaleslate-ajax-search-results-container .opalestate-rows article:hover .property-meta-list {
+	background-color: #41b1d3;
+}
+.search-properies-form #opalestate-search-form-v ul.list-property-status li.active::before {
+	border-top-width: 8px;
+}
+.ajax-search-form {
+	background-color: #eee;
+	.opalestate-popup .popup-head {
+		color: #000;
+	}
+}
+.opalestate-popup .popup-body {
+	background-color: #eee;
+	label {
+		color: #000;
+	}
+	&:before {
+		border-bottom-color: #eee;
+	}
+}
+.google-map-tabs .nav.nav-tabs > li > a {
+	background-color: #eee !important;
+	color: #000 !important;
+}
+.google-map-tabs .nav.nav-tabs > li.active > a {
+	color: #fff !important;
+}
+.property-preview .carousel-control {
+	background-color: #eee;
+	color: #000;
+	&:hover {
+		background-color: $theme-color;
+		color: #fff;
+	}
+}

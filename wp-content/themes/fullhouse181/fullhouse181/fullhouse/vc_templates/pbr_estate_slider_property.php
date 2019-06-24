@@ -1,0 +1,49 @@
+<?php 
+$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
+extract( $atts );
+
+if( class_exists("Opalestate_Query") ):
+	$query = Opalestate_Query::get_property_query( array("posts_per_page"=>$limit) );
+
+$id = rand();
+?>
+<div class="widget widget-estate-property <?php echo esc_attr($style); ?>">
+	<?php if(!empty($title)){ ?>
+		<h4 class="widget-title text-center">
+			<span><?php echo trim($title); ?></span>
+			<?php if(trim($description)!=''){ ?>
+				<span class="widget-desc">
+					<?php echo trim($description); ?>
+				</span>
+			<?php } ?>
+		</h4>
+	<?php } ?>
+	
+	<div class="widget-content">
+		<div class="opalesate-recent-property opalesate-properties-slider opalestate-rows">
+			<?php if( $query->have_posts() ): ?> 
+			<div class="owl-carousel-play">
+				<div class="owl-carousel" data-slide="1"  data-singleItem="true" data-navigation="true" data-autoplay="true">
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+					<div class="item">
+						<?php echo Opalestate_Template_Loader::get_template_part( 'content-property-fullslider' ); ?>
+					</div>
+					<?php endwhile; ?>
+				</div>
+				 <div class="carousel-controls carousel-controls-v3">
+					<a class="left carousel-control carousel-xs" href="#post-slide-<?php $id; ?>" data-slide="prev">
+						<span class="fa fa-chevron-left"></span>
+					</a>
+					<a class="right carousel-control carousel-xs" href="#post-slide-<?php $id; ?>" data-slide="next">
+						<span class="fa fa-chevron-right"></span>
+					</a>
+				</div>
+			</div>
+			<?php else: ?>
+				<?php get_template_part( 'content', 'none' ); ?>
+			<?php endif; ?>	
+		</div>
+	</div>
+</div>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>

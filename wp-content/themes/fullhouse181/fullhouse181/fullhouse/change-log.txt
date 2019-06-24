@@ -1,0 +1,11 @@
+Version: 1.8.1 Updated 01-12-2017
+
+- Fix bug login box
+
+Version: 1.8 Updated 21-9-2017
+
+- Add new element: Property Full Slider with two style
+- New demo: Home Video, Home Property Slider style 1, Home Property Slider style 2
+- Add feature: 360 Virtual Tour in Single Property
+- On/Off Sticky Sidebar in Customizer
+- Fix bug Main content below Sidebar when mobile screen.

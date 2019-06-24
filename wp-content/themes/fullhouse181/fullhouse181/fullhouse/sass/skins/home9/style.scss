@@ -1,0 +1,285 @@
+/*
+Theme Name: fullhouse
+Theme URI: http://www.wpopal.com/product/fullhouse/
+Author: Opal Team
+Author URI: https://www.wpopal.com/
+Description: In 2016, our default theme lets you create a responsive magazine website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a magazine website with WordPress has never been easier.
+Version: 1.6
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+Text Domain: fullhouse
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/*------------------------------------------------------------------
+[Table of contents]
+1. Utilities
+2. Base
+3. Layout
+4. Page
+5. Post
+6. Form
+7. Responsive
+8. Widget
+
+-------------------------------------------------------------------*/
+@import "../../bootstrap";
+
+@import "../../components/variables";
+@import "vars/vars";
+
+/* Core CSS*/
+@import "../../bootstrap/scaffolding";
+@import "../../bootstrap/type";
+@import "../../bootstrap/forms";
+@import "../../bootstrap/buttons"; 
+
+/* 1. Utilities */
+@import "../../components/mixins";
+
+/* 2. Base */
+@import "../../components/base";
+@import "../../components/typo";
+
+/* 3. Layout */
+@import "../../components/template-layout";
+@import "../../components/widget-layout";
+
+/* 8. Widget */
+@import "../../components/widgets";
+@import "../../components/nav";
+
+/* 4. Page */
+@import "../../components/page";
+
+/* 5. Post */
+@import "../../components/post-formats";
+@import "../../components/post-single";
+@import "../../components/custom-posttype";
+
+/* 6. Form */
+@import "../../components/elements";
+@import "../../components/vc";
+
+/* 7. Responsive */
+@import "../../components/responsive";
+
+body {
+	.vc_btn3 {
+		font-weight: 800;
+	}
+	.vc_btn3.vc_btn3-size-md {
+		font-size: 16px;
+		.vc_btn3-icon {
+			font-size: 14px;
+		}
+	}
+}
+.btn {
+	font-weight: 700;
+}
+.navbar-mega {
+	.navbar-nav {
+		> li {
+			> a {
+				font-weight: 600;
+				font-size:16px;
+				.caret {
+					font-size: 14px;
+				}
+			}
+			.dropdown-menu li a {
+				font-weight: 600;
+			}
+		}
+	}
+}
+#pbr-footer {
+	.widget {
+		.widget-title,
+		.widgettitle {
+			font-size: 24px;
+			font-weight: 300;
+			text-transform: none;
+			padding: 0;
+			&:after {
+				content: none;
+			}
+		}
+		&.widget_recent_entries {
+			ul {
+				margin: 0;
+			}
+			li {
+				border-top: 1px solid rgba($white,.1);
+				padding: 20px 0 0;
+				margin: 20px 0 0;
+				a {
+					font-weight: 800;
+					font-size: 18px;
+				}
+				.post-date {
+					color: $gray-light;
+					font-style: normal;
+				}
+				&:first-child {
+					border-top: none;
+					padding: 0;
+					margin: 0;
+				}
+			}
+		}
+		&.widget_pbr_socials_widget ul > li a i {
+			background-color: #0d5392;
+		}
+	}
+}
+.pbr-copyright {
+	background-color: transparent;
+	color: #ccc;
+	padding: 40px 0;
+}
+.footer-wrapper {
+	background-image: url('#{$image-theme-path}footerbg-2.png');
+	background-color: #004480;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: contain;
+	.footer-wrapper-bg {
+		bottom: 0;
+		@include opacity(.1);
+	}
+}
+#pbr-topbar .widget_pbr_socials_widget ul > li a i {
+	color: #fff;
+}
+#pbr-topbar.pbr-topbar-v9 .widget_pbr_socials_widget .list-inline {
+	margin: 0;
+}
+.widget-text-heading {
+	padding-bottom: 0;
+	&:after,
+	&:before {
+		content: none;
+	}
+	.widget-heading {
+		font-size: 60px;
+		text-transform: none;
+	}
+	&.style-2 {
+		.widget-heading {
+			font-size: 30px;
+		}
+	}
+	&.style-4 {
+		background: none;
+	}
+}
+.counters {
+	.counter-wrap {
+		color: #fff;
+		font-size: 40px;
+		font-weight: 200;
+		.counter {
+			padding-bottom: 0;
+			margin-bottom: 0;
+			&:after {
+				content: none;
+			}
+		}
+	}
+	h5 {
+		font-weight: 800;
+		font-size: 16px;
+	}
+}
+.testimonials {
+	&.testimonials-v4 {
+		.testimonials-body {
+			padding: 30px 0 0;
+			letter-spacing: 0;
+		}
+		.testimonials-quote {
+			background-color: transparent;
+			position:relative;
+			padding: 0;
+			font-size: 30px;
+			color: $gray-light;
+			margin:0;
+			font-weight:200;
+			font-style:italic;
+			i {
+				display: none;
+			}
+			p {
+				line-height: 36px;
+			}
+		}
+		.testimonials-profile {
+			margin-top: 35px;
+			position: relative;
+			.name {
+				font-size: 14px;
+				font-weight: 600;
+				margin: 0 0 10px;
+			}
+			.job {
+				font-weight: 600;
+				color: $light-gray;
+			}
+		}
+		.testimonials-avatar {
+			position: relative;
+			margin: 0 0 20px;
+			display:inline-block;
+			overflow: visible;
+			top: 0;
+			@include rtl-left(0);
+			img {
+				border-radius: 50%;
+			}
+			&:before {
+				font-family: 'FontAwesome';
+				content: "\f10d";
+				color:$theme-color;
+				position:absolute;
+				@include rtl-left(-10px);
+				top:-5px;
+				font-size: 24px;
+			}
+		}
+		.owl-controls {
+			padding-top: 30px;
+			.owl-page span {
+				background: none;
+			}
+		}
+	}
+}
+#content {
+	.vc_row {
+		.widget {
+			.widget-title,
+			.widgettitle {
+				text-transform: none;
+				background: none;
+				padding: 0;
+				font-size: 60px;
+				&:after {
+					content: none;
+				}
+			}
+		}
+	}
+}
+.form-title {
+	font-size: 30px;
+	text-transform: none;
+}
+.widget .widget-title,
+.widget .widgettitle {
+	font-size: 22px;
+	text-transform: none;
+}
